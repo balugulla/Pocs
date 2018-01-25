@@ -1,0 +1,31 @@
+package com.isone.fcts;
+
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.Robot;
+import java.util.Random;
+public class MouseProgram{
+
+    public static void main(String[] args) throws Exception{
+        Robot hal = new Robot();
+        Random random = new Random();
+        while(true){
+            hal.delay(1000 * 60);
+            int x = random.nextInt() % 640;
+            int y = random.nextInt() % 480;
+            System.out.println("values of X = "+ x +"  & Y = "+ y);
+            hal.mouseMove(x,y);
+        }
+        
+      /*  while(true){
+           hal.delay(1000 * 30);       
+           Point pObj = MouseInfo.getPointerInfo().getLocation();
+           System.out.println(pObj.toString() + "x>>" + pObj.x + "  y>>" + pObj.y);
+           hal.mouseMove(pObj.x + 1, pObj.y + 1);  
+           hal.mouseMove(pObj.x - 1, pObj.y - 1);
+           pObj = MouseInfo.getPointerInfo().getLocation();
+           System.out.println(pObj.toString() + "x>>" + pObj.x + "  y>>" + pObj.y);
+       }*/
+        
+    }
+}
